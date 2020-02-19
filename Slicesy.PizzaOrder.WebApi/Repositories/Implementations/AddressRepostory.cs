@@ -3,10 +3,11 @@ using Slicesy.PizzaOrder.WebApi.Repositories.Models;
 
 namespace Slicesy.PizzaOrder.WebApi.Repositories.Implementations
 {
-    public class UserRepository : RepositoryBase<User>, IUserRepository
+    public class AddressRepository : RepositoryBase<Address>, IAddressRepository
     {
-        public UserRepository(RepositoryContext repositoryContext) : base(repositoryContext)
+        public AddressRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+        
     }
 }

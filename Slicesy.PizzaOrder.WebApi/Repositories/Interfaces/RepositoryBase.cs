@@ -3,8 +3,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Slicesy.PizzaOrder.WebApi.Repositories.Implementations;
 
-namespace Slicesy.PizzaOrder.WebApi.Repositories
+namespace Slicesy.PizzaOrder.WebApi.Repositories.Interfaces
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
