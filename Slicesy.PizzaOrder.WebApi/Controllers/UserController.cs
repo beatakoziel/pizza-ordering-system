@@ -3,7 +3,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Slicesy.PizzaOrder.WebApi.Controllers
 {
-    [ApiController, Route("api/user")]
+    [ApiController]
+    [Route("api/user")]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
@@ -18,7 +19,5 @@ namespace Slicesy.PizzaOrder.WebApi.Controllers
         {
             return null
         }*/
-        
-        
     }
 }

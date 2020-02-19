@@ -23,7 +23,7 @@ namespace Slicesy.PizzaOrder.WebApi.Utilities
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)
         {
             services.AddDbContext<RepositoryContext>(optionsAction =>
-                optionsAction.UseNpgsql(config["databaseConnection:connectionString"])); 
+                optionsAction.UseNpgsql(config["databaseConnection:connectionString"]));
         }
 
         public static void ConfigureRepositories(this IServiceCollection services)
