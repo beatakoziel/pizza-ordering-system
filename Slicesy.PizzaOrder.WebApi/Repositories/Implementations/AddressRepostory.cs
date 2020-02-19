@@ -8,6 +8,5 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Implementations
         public AddressRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
-        
     }
 }
