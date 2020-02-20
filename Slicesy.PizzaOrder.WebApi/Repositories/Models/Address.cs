@@ -8,21 +8,21 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { set; get; }
+        public long Id { get; set; }
 
         [Required(ErrorMessage = "Postal code is required")]
-        public string PostalCode { set; get; }
+        public string PostalCode { get; set; }
 
         [Required(ErrorMessage = "City is required")]
-        public string City { set; get; }
+        public string City { get; set; }
 
         [Required(ErrorMessage = "Street is required")]
-        public string Street { set; get; }
+        public string Street { get; set; }
 
         [Required(ErrorMessage = "Building number is required")]
-        public string BuildingNumber { set; get; }
+        public string BuildingNumber { get; set; }
 
         [Required(ErrorMessage = "Flat number is required")]
-        public string FlatNumber { set; get; }
+        public string FlatNumber { get; set; }
     }
 }
