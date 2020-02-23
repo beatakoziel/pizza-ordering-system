@@ -9,7 +9,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-
+        // add relation for pizzeria
         [Required(ErrorMessage = "Pizzeria id is required")]
         public long PizzeriaId { get; set; }
 
@@ -22,6 +22,6 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Price per slice is required")]
-        public float PricePerSlice { get; set; }
+        public decimal PricePerSlice { get; set; }
     }
 }
