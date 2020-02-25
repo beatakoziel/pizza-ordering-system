@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+using System;
+using System.Collections.Generic;
+>>>>>>> Stashed changes
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,5 +28,10 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 
         [Required(ErrorMessage = "Price per slice is required")]
         public decimal PricePerSlice { get; set; }
+<<<<<<< Updated upstream
+=======
+
+        public ISet<Tuple<string, decimal>> SizeAndPrice { get; set; }
+>>>>>>> Stashed changes
     }
 }
