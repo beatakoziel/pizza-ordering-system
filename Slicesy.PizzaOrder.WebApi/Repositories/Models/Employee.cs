@@ -17,9 +17,9 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public string Surname { get; set; }
 
         [Required(ErrorMessage = "User is required")]
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         [Required(ErrorMessage = "Company is required")]
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
     }
 }
