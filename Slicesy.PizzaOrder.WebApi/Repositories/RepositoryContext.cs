@@ -26,5 +26,6 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories
         
         public DbSet<CustomPizza> CustomPizzas { get; set; } 
         
+        public DbSet<Company> Companies { get; set; }
     }
 }

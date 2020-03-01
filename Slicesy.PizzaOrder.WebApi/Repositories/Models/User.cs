@@ -16,7 +16,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set;  }
+        public long Id { get; set; }
 
         [Required(ErrorMessage = "Login is required")]
         public string Login { get; set; }
