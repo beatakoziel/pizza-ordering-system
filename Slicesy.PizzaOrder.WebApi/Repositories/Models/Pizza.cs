@@ -9,6 +9,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+
         // add relation for pizzeria
         [Required(ErrorMessage = "Pizzeria id is required")]
         public long PizzeriaId { get; set; }
