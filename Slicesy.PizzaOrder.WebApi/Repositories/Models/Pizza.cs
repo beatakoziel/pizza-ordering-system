@@ -28,7 +28,6 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         [Required(ErrorMessage = "Pizza type is required")]
         public virtual PizzaType PizzaType { get; set; }
         
-        [Required(ErrorMessage = "Ingredients are required")]
         public virtual ISet<Ingredient> AdditionalIngredients { get; set; }
         
         [Required(ErrorMessage = "Prices are required")]
