@@ -51,6 +51,91 @@ namespace Slicesy.PizzaOrder.WebApi.Migrations
                 b.ToTable("Address");
             });
 
+            modelBuilder.Entity("Slicesy.PizzaOrder.WebApi.Repositories.Models.Company", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("bigint")
+                    .HasAnnotation("Npgsql:ValueGenerationStrategy",
+                        NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                b.Property<long?>("CompanyAddressFK")
+                    .IsRequired()
+                    .HasColumnType("bigint");
+
+                b.Property<long?>("CompanyContactDataFK")
+                    .IsRequired()
+                    .HasColumnType("bigint");
+
+                b.Property<long?>("CompanyDeliveryAddressFK")
+                    .IsRequired()
+                    .HasColumnType("bigint");
+
+                b.HasKey("Id");
+
+                b.HasIndex("CompanyAddressFK");
+
+                b.HasIndex("CompanyContactDataFK");
+
+                b.HasIndex("CompanyDeliveryAddressFK");
+
+                b.ToTable("Companies");
+            });
+
+            modelBuilder.Entity("Slicesy.PizzaOrder.WebApi.Repositories.Models.ContactData", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("bigint")
+                    .HasAnnotation("Npgsql:ValueGenerationStrategy",
+                        NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                b.Property<string>("AdditionalInfo")
+                    .HasColumnType("text");
+
+                b.Property<string>("EmailAddress")
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                b.Property<string>("PhoneNumber")
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                b.HasKey("Id");
+
+                b.ToTable("ContactData");
+            });
+
+            modelBuilder.Entity("Slicesy.PizzaOrder.WebApi.Repositories.Models.Pizza", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("bigint")
+                    .HasAnnotation("Npgsql:ValueGenerationStrategy",
+                        NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                b.Property<string>("Description")
+                    .HasColumnType("text");
+
+                b.Property<string>("Ingredients")
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                b.Property<long>("PizzeriaId")
+                    .HasColumnType("bigint");
+
+                b.Property<decimal>("PricePerSlice")
+                    .HasColumnType("numeric");
+
+                b.HasKey("Id");
+
+                b.ToTable("Pizza");
+            });
+
             modelBuilder.Entity("Slicesy.PizzaOrder.WebApi.Repositories.Models.User", b =>
             {
                 b.Property<long>("Id")
@@ -76,6 +161,27 @@ namespace Slicesy.PizzaOrder.WebApi.Migrations
                 b.HasKey("Id");
 
                 b.ToTable("PizzaUser");
+            });
+
+            modelBuilder.Entity("Slicesy.PizzaOrder.WebApi.Repositories.Models.Company", b =>
+            {
+                b.HasOne("Slicesy.PizzaOrder.WebApi.Repositories.Models.Address", "CompanyAddress")
+                    .WithMany()
+                    .HasForeignKey("CompanyAddressFK")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.HasOne("Slicesy.PizzaOrder.WebApi.Repositories.Models.ContactData", "ContactData")
+                    .WithMany()
+                    .HasForeignKey("CompanyContactDataFK")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.HasOne("Slicesy.PizzaOrder.WebApi.Repositories.Models.Address", "DeliveryAddress")
+                    .WithMany()
+                    .HasForeignKey("CompanyDeliveryAddressFK")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
             });
 #pragma warning restore 612, 618
         }
