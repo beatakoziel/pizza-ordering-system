@@ -12,7 +12,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
             Login = login;
             Password = password;
             PermittedResourceId = permittedResourceId;
-            Active = true;
+            Active = false;
         }
 
         [Key]
