@@ -1,17 +1,16 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Slicesy.PizzaOrder.WebApi
 {
-    public static class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://localhost:2137")
-                .Build()
-                .Run();
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); })
+                .Build().Run();
         }
     }
 }
