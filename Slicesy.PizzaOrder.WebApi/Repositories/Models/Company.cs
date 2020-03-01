@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 {
+    [Table("Company")]
     public class Company
     {
         [Key]
@@ -10,15 +11,12 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public long Id { get; set; }
 
         [Required(ErrorMessage = "Contact data is required")]
-        [ForeignKey("CompanyContactDataFK")]
         public virtual ContactData ContactData { get; set; }
 
         [Required(ErrorMessage = "Company address is required")]
-        [ForeignKey("CompanyAddressFK")]
         public virtual Address CompanyAddress { get; set; }
 
         [Required(ErrorMessage = "Delivery address is required")]
-        [ForeignKey("CompanyDeliveryAddressFK")]
         public virtual Address DeliveryAddress { get; set; }
 
         //TODO
