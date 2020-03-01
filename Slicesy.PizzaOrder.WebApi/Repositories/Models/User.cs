@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Slicesy.PizzaOrder.WebApi.Repositories.Models.Enums;
 
 namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 {
@@ -11,7 +12,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
             Login = login;
             Password = password;
             PermittedResourceId = permittedResourceId;
-            Active = true;
+            Active = false;
         }
 
         [Key]
@@ -24,8 +25,12 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Active info is required")]
         public bool Active { get; set; }
 
         public long? PermittedResourceId { get; set; }
+
+        [Required(ErrorMessage = "Role is required")]
+        public virtual UserRole Role { get; set; }
     }
 }
