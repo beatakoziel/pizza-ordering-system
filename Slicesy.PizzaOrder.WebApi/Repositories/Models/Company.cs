@@ -20,7 +20,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public virtual Address DeliveryAddress { get; set; }
 
         [Required(ErrorMessage = "Register code is required")]
-        [StringLength(20, MinimumLength = 20, ErrorMessage = "Postal code must have {0} characters")]
+        [StringLength(20, MinimumLength = 20, ErrorMessage = "Register code must have {0} characters")]
         public string RegisterCode { get; set; }
 
         //TODO
