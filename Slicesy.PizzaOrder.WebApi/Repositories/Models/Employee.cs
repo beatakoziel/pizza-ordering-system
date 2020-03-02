@@ -11,9 +11,11 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public long Id { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
+        [StringLength(255, ErrorMessage = "The {0} value cannot exceed {1} characters.")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Surname is required")]
+        [StringLength(255, ErrorMessage = "The {0} value cannot exceed {1} characters.")]
         public string Surname { get; set; }
 
         [Required(ErrorMessage = "User is required")]

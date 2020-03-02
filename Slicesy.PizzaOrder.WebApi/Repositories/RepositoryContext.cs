@@ -17,17 +17,17 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories
         public DbSet<ContactData> ContactData { get; set; }
 
         public DbSet<SizeAndPrice> SizeAndPrices { get; set; }
-        
+
         public DbSet<Pizzeria> Pizzerias { get; set; }
 
         public DbSet<Ingredient> Ingredients { get; set; }
-        
+
         public DbSet<Pizza> Pizzas { get; set; }
-        
-        public DbSet<CustomPizza> CustomPizzas { get; set; } 
-        
+
+        public DbSet<CustomPizza> CustomPizzas { get; set; }
+
         public DbSet<Company> Companies { get; set; }
-        
+
         public DbSet<Employee> Employees { get; set; }
     }
 }

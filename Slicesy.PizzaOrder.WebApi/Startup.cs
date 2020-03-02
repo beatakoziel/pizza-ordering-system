@@ -29,7 +29,7 @@ namespace Slicesy.PizzaOrder.WebApi
             services.AddMvc();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Values Api", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Slicesy PizzaOrder Api", Version = "v1"});
                 c.AddSecurityDefinition("Bearer",
                     new OpenApiSecurityScheme {Name = "Authorization"});
             });
@@ -38,7 +38,13 @@ namespace Slicesy.PizzaOrder.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                //swagger
+                app.UseSwagger();
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Slicesy PizzaOrder v1"); });
+            }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
@@ -49,10 +55,6 @@ namespace Slicesy.PizzaOrder.WebApi
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
-            //swagger
-            app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1"); });
         }
     }
 }
