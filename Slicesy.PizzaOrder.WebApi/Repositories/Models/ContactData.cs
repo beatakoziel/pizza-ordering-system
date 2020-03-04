@@ -11,8 +11,10 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public long Id { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
+        [StringLength(25, ErrorMessage = "The {0} value cannot exceed {1} characters.")]
         public string PhoneNumber { get; set; }
 
+        [StringLength(255, ErrorMessage = "The {0} value cannot exceed {1} characters.")]
         [Required(ErrorMessage = "Email address is required")]
         public string EmailAddress { get; set; }
 

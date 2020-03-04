@@ -14,10 +14,10 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         public string Name { get; set; }
 
         public string Description { get; set; }
-        
+
         [Required(ErrorMessage = "Address is required")]
         public virtual Address Address { get; set; }
-        
+
         [Required(ErrorMessage = "Contact data is required")]
         public virtual ContactData ContactData { get; set; }
     }
