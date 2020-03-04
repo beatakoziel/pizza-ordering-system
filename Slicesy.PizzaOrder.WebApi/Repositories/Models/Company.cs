@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,8 +24,8 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
         [StringLength(20, MinimumLength = 20, ErrorMessage = "Register code must have {0} characters")]
         public string RegisterCode { get; set; }
 
-        //TODO
-        //public virtual ISet<Employee> Employees { get; set; }
-        //public virtual ISet<Order> Orders { get; set; }
+        public virtual ISet<Employee> Employees { get; set; }
+
+        public virtual ISet<Order> Orders { get; set; }
     }
 }

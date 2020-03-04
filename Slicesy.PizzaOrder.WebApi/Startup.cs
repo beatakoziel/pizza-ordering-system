@@ -45,6 +45,7 @@ namespace Slicesy.PizzaOrder.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Slicesy PizzaOrder v1"); });
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
