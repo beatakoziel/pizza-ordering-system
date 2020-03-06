@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,5 +21,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 
         [Required(ErrorMessage = "Contact data is required")]
         public virtual ContactData ContactData { get; set; }
+
+        public virtual ISet<Pizza> Pizzas { get; set; }
     }
 }

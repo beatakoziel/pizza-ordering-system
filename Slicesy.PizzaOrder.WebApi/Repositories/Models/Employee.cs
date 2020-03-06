@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
@@ -23,5 +24,7 @@ namespace Slicesy.PizzaOrder.WebApi.Repositories.Models
 
         [Required(ErrorMessage = "Company is required")]
         public virtual Company Company { get; set; }
+
+        public virtual ISet<OrderPosition> OrderPositions { get; set; }
     }
 }
