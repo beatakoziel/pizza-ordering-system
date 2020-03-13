@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  db:
+    image: "postgres:11"
+    environment: 
+      POSTGRES_USER: 'pizzaadmin'
+      POSTGRES_PASSWORD: 'pizzasecret'
+      POSTGRES_DB: 'pizzadb'
+    volumes:
+      - pizza_dbdata:/var/lib/postgresql/data
+    container_name: "pizza_postgres"
+    ports:
+      - "5432:5432"
+volumes:
+  pizza_dbdata:
